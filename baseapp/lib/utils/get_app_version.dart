@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:baseapp/utils/utils.dart';
 import 'package:flutter/material.dart';
@@ -182,6 +181,8 @@ class GetAppVersion {
           callbackStatus();
         }
       }
+    } else {
+      callbackStatus();
     }
   }
 }

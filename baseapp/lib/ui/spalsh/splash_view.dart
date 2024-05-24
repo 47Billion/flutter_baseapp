@@ -19,7 +19,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void myCallback()async {
-    // Do something when the callback is called
+    // Do something when the callback is calledke
     print('Callback executed!');
     await Future.delayed(Duration(seconds: 3), () {});
     Get.offNamedUntil(Routes.LoginView,

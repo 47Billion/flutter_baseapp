@@ -5,6 +5,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../utils/get_app_version.dart';
 import '../../routes/routes.dart';
+import '../../utils/responsive_helper.dart';
 
 class SplashView extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    GetAppVersion().checkForUpdates(myCallback);
+    //GetAppVersion().checkForUpdates(myCallback);
   }
 
   void myCallback()async {
@@ -37,7 +38,17 @@ class _SplashViewState extends State<SplashView> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Center(
-        child: Image.asset('assets/images/splash.png'), // Replace with your splash image asset
+        child: Column(
+          children: [
+            Image.asset('assets/images/splash.png'),
+            Container(
+              child: Text(
+                'Responsive Font Size Example',
+                style: TextStyle(fontSize: ResponsiveHelper.responsiveFontSize(20,context)),
+              ),
+            ),
+          ],
+        ), // Replace with your splash image asset
       ),
     );
   }

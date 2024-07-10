@@ -122,6 +122,9 @@ class GetAppVersion {
     String serverStoreUrl = "";
     bool forceUpdate = false;
     bool underMaintenance = false;
+    print("call here 1");
+   // print("call here ${Platform.is}");
+
 
     if (Platform.isAndroid) {
       serverAppLatestVersionCode =
@@ -136,6 +139,8 @@ class GetAppVersion {
       serverStoreUrl = versionResponseData['ios']['update_url'];
       underMaintenance = versionResponseData['ios']['under_maintenance'];
     }
+
+    print("call here 2");
 
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     String versionNumber = "";
